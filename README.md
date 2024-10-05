@@ -58,11 +58,11 @@ $ sudo docker run -d -v ./conf/mta/:/mnt/mta/ commissi0n/mtacoin-miner:1.0
 ```
 
 ## Notes
-- Supports up to 4 miner containers concurrently.
-- "Server" directory contains all files relevant to the server container.
-- "Miner" directory contains all files relevant to the miner container.
-- Log is kept in "/var/log/mtacoin.log".
-- "conf/mta" directory holds the "mtacoin.conf" configuration file which sets the difficulty (default is 16).
+* Supports up to 4 miner containers concurrently.
+* "Server" directory contains all files relevant to the server container.
+* "Miner" directory contains all files relevant to the miner container.
+* Log is kept in "/var/log/mtacoin.log".
+* "conf/mta" directory holds the "mtacoin.conf" configuration file which sets the difficulty (default is 16).
 
 ## Download
 
