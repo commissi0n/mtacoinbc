@@ -25,8 +25,6 @@
   - Control the difficulty by adjusting the number of leading 0's required in a mined block hash for it to be considered valid.
 * IPC
   - Communication between containers is handled via named pipes
-* Cross platform
-  - Windows, macOS* and Linux ready.
 
 ## How To Use
 
