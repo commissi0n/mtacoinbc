@@ -5,7 +5,7 @@
   <br>
 </h1>
 
-<p align="center">Blockchain mining simulation using IPC via named pipes.</p>
+<p align="center">Dockerized blockchain mining simulation using IPC</p>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -18,11 +18,13 @@
 ## Key Features
 
 * Simulates a blockchain mining process
-  - Uses named pipes to communicate between the server container and the miner containers.
+  - Miner containers constantly receive, mine (using crc32) and send mined blocks to be validated by the server container
 * Logging for each individual container
   - Each container logs its communication attempts to a specified file within its container.
 * Difficulty setting
-  - Option to change the difficulty - the number of leading 0's required in a hash for it to be valid.
+  - Control the difficulty by adjusting the number of leading 0's required in a mined block hash for it to be considered valid.
+* IPC
+  - Communication between containers is handled via named pipes
 * Cross platform
   - Windows, macOS* and Linux ready.
 
@@ -58,11 +60,11 @@ $ sudo docker run -d -v ./conf/mta/:/mnt/mta/ commissi0n/mtacoin-miner:1.0
 ```
 
 ## Notes
-* Supports up to 4 miner containers concurrently.
-* "Server" directory contains all files relevant to the server container.
-* "Miner" directory contains all files relevant to the miner container.
-* Log is kept in "/var/log/mtacoin.log".
-* "conf/mta" directory holds the "mtacoin.conf" configuration file which sets the difficulty (default is 16).
+* Supports up to 4 miner containers concurrently
+* Log file is kept in "/var/log/mtacoin.log"
+* "Server" directory contains all files relevant to the server container
+* "Miner" directory contains all files relevant to the miner container
+* "conf/mta" directory contains the "mtacoin.conf" configuration file for setting the difficulty (default is 16)
 
 ## Download
 
